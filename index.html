@@ -20,6 +20,8 @@
       background-image: url('images/background.jpg');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       animation: fadeIn 2s ease-in-out;
       padding-top: 120px;
       text-align: center;
@@ -43,9 +45,9 @@
     .navbar {
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Space between logo, nav links, and sign-in button */
+      justify-content: space-between;
       width: 100%;
-      max-width: 1200px; /* Limit the navbar width for large screens */
+      max-width: 1200px;
       position: relative;
     }
 
@@ -68,8 +70,8 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      flex: 1; /* Allow the nav links to take up available space */
-      justify-content: center; /* Center the nav links */
+      flex: 1;
+      justify-content: center;
     }
 
     .nav-links a {
@@ -78,15 +80,15 @@
       color: #333;
       transition: color 0.3s ease, border-bottom 0.3s ease;
       font-size: 1rem;
-      display: inline-block; /* Ensure the underline only applies to the text */
+      display: inline-block;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
       color: #6200a3;
-      border-bottom: 2px solid #6200a3; /* Underline only the text */
-      padding-bottom: 2px; /* Add spacing between text and underline */
-      width: auto; /* Ensure the underline doesn't stretch */
+      border-bottom: 2px solid #6200a3;
+      padding-bottom: 2px;
+      width: auto;
     }
 
     .admin-desktop {
@@ -112,17 +114,30 @@
 
     @media (min-width: 769px) {
       .admin-btn {
-        margin-left: auto; /* Push the button to the far right */
+        margin-left: auto;
       }
     }
 
     .nav-toggle {
-      display: none; /* Hide toggle bar by default */
+      display: none;
     }
 
     @media (max-width: 768px) {
+      body, html {
+        background-color: rgba(255, 255, 255, 0.7); /* Transparent white */
+        background-image: url('images/background.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      header {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
       .nav-toggle {
-        display: block; /* Show toggle bar only for mobile devices */
+        display: block;
         font-size: 24px;
         cursor: pointer;
         color: #6200a3;
@@ -131,14 +146,14 @@
       .nav-center {
         display: none;
         flex-direction: column;
-        position: absolute; /* Position the dropdown menu */
-        top: 100px; /* Move the dropdown closer to the toggle bar */
+        position: absolute;
+        top: 100px;
         left: 0;
         background-color: white;
-        width: 100%; /* Make the dropdown cover the screen horizontally */
-        padding: 30px 0; /* Increase vertical padding */
-        z-index: 999; /* Ensure it appears above other elements */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+        width: 100%;
+        padding: 30px 0;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
       .nav-center.show {
@@ -152,7 +167,7 @@
       }
 
       .nav-links a {
-        padding: 15px 20px; /* Add spacing for links */
+        padding: 15px 20px;
         width: 100%;
         text-align: center;
         border-top: 1px solid #eee;
@@ -161,7 +176,7 @@
       .admin-btn {
         width: 90%;
         max-width: 250px;
-        margin: 15px auto; /* Center the button inside the dropdown for mobile */
+        margin: 15px auto;
         text-align: center;
       }
     }
@@ -192,15 +207,12 @@
 
   <header>
     <div class="navbar">
-      <!-- Logo on the left -->
       <div class="logo">
         <img src="images/logo.png" alt="Drone Guru Logo" />
       </div>
 
-      <!-- Mobile toggle -->
       <div class="nav-toggle" onclick="toggleMenu()">☰</div>
 
-      <!-- Navigation links in the center -->
       <div class="nav-center" id="navMenu">
         <div class="nav-links">
           <a href="homepage.html" class="active">Home</a>
@@ -210,7 +222,6 @@
           <a href="contact us.html">Contact Us</a>
           <a href="for hire.html">For Hire</a>
         </div>
-        <!-- Sign In button inside the dropdown -->
         <button class="admin-btn" onclick="toggleAdmin()">Sign In</button>
       </div>
     </div>
@@ -221,16 +232,16 @@
     <p class="tagline" style="margin-top:55px; color: #05bdf5; margin-bottom: 15px; font-size: 2.5rem; font-weight: bold;">Elevate Your Future. Learn to Master the Skies.</p>
     <p class="hero-description" style="line-height: 1.8; font-size: 1.5rem; font-weight: bold;">
       <div class="intro-text" style="font-size: 2rem; font-weight: bold; color: #333; margin-top: 79px;"></div>
-        <p style="color: #000000; font-weight: bold; font-size: 2rem;">At Drone Guru Pvt. Ltd., we are passionate about drones and their power to transform industries.</p>
-        <p style="color: #000000; font-weight: bold; font-size: 2rem;">Whether you’re a beginner eager to learn or a business looking for drone solutions,</p>
-        <p style="color: #000000; font-weight: bold; font-size: 2rem;">we are here to guide you every step of the way.</p>
+        <p style="color: #ffffff; font-weight: bold; font-size: 2rem;">At Drone Guru Pvt. Ltd., we are passionate about drones and their power to transform industries.</p>
+        <p style="color: #ffffff; font-weight: bold; font-size: 2rem;">Whether you’re a beginner eager to learn or a business looking for drone solutions,</p>
+        <p style="color: #ffffff; font-weight: bold; font-size: 2rem;">we are here to guide you every step of the way.</p>
       </div>
       <br><br>
       <span style="color: #00f329; font-size: 2.5rem; font-weight: bold;">Hurry Now, limited seats only!</span>
       <br><br>
-      <span style="color: #7105fe; font-size: 1.5rem; font-weight: bold;">Landline no: -</span><br>
-      <span style="color: #7105fe; font-size: 1.5rem; font-weight: bold;">Mobile no:</span><br>
-      <span style="color: #7105fe; font-size: 1.5rem; font-weight: bold;">Address: 10, Bijuli Bazar, New Baneshwor, Kathmandu, Nepal</span>
+      <span style="color: #ffffff; font-size: 1.5rem; font-weight: bold;">Landline no: -</span><br>
+      <span style="color: #ffffff; font-size: 1.5rem; font-weight: bold;">Mobile no:</span><br>
+      <span style="color: #ffffff; font-size: 1.5rem; font-weight: bold;">Address: 10, Bijuli Bazar, New Baneshwor, Kathmandu, Nepal</span>
     </p>
 
     <a href="contact us.html" class="contact-btn" style="margin-top: 70px;">Contact Us</a>
