@@ -128,32 +128,28 @@
     .mobile-nav {
       display: none;
       position: fixed;
-      top: 70px;
-      left: 5%;
-      transform: translateX(-50%);
-      transform: translate(-0%, -50%); /* Center the menu */
-      background-color: rgba(255, 255, 255, 0.95);
+      top: 70px; /* Adjust the dropdown position below the header */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center the dropdown box */
+      background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       padding: 20px;
       z-index: 999;
-      width: 80%;
+      width: 80%; /* Adjust width for better appearance */
       max-width: 600px;
       flex-direction: column;
       align-items: center;
       transition: transform 0.3s ease, opacity 0.3s ease;
-      transform: scale(1);
       opacity: 0;
-      ;
       text-align: center;
       gap: 15px;
     }
     
     .mobile-nav.active {
-  display: flex; /* Show dropdown when active */
-  opacity: 1; /* Make it visible */
- 
-}
+      display: flex; /* Show dropdown when active */
+      opacity: 1; /* Make it visible */
+    }
     
     .mobile-nav a {
       text-decoration: none;
