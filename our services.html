@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Guru - Our Services</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Add zoom-out animation to the body background */
+    @keyframes zoomOutBackground {
+      0%, 100% {
+        background-size: 110%; /* Start and end with a slightly zoomed-in background */
+      }
+      50% {
+        background-size: 100%; /* Zoom out to the original size */
+      }
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: url('images/services.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      padding-top: 120px; /* Adds space below the fixed header */
+      animation: zoomOutBackground 30s infinite ease-in-out; /* Apply the zoom-out animation */
+    }
+
+    /* Header Styling */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 10px 0px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center the entire navbar content */
+      padding: 40px 30px; /* Decreased padding for a smaller navbar */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .logo {
+      position: absolute;
+      left: 20px; /* Keep the logo on the far left */
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    .logo img {
+      height: 100px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #6200a3;
+      border-bottom: 2px solid #6200a3;
+      padding-bottom: 2px;
+    }
+
+    .admin-btn {
+      background-color: #6200a3;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .admin-btn:hover {
+      background-color: #4b007a;
+    }
+
+    /* Hamburger Button */
+    .hamburger {
+      display: none; /* Hidden by default for desktop */
+      font-size: 24px; /* Default size */
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #0f0f0f;
+      position: absolute;
+      top: 20px; /* Adjust vertical alignment */
+      right: 20px; /* Move the button to the right for better visibility */
+      z-index: 1001; /* Ensure it appears above other elements */
+    }
+
+    /* Main Section */
+    .circle-wrapper {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 1200px;
+      text-align: center;
+    }
+
+    .circle-wrapper h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #6200a3;
+      margin-bottom: 20px;
+    }
+
+    /* Grid Container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 20px;
+      justify-items: center;
+    }
+
+    .service {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .service img {
+      width: 100%;
+      max-width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 30px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 28px;
+    }
+
+    .modal-content p {
+      color: #555;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+      background: none;
+      border: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 15px; /* Increase padding for a larger header */
+      }
+
+      .navbar {
+        padding: 60px 15px; /* Increase navbar padding */
+      }
+
+      .logo img {
+        height: 100px; /* Increase the logo size for mobile */
+      }
+      .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+      }
+
+      .nav-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 253, 253, 0.95);
+        position: absolute;
+        top: 60px; /* Position below the header */
+        left: 5px; /* Center the menu horizontally */
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        display: flex; /* Show navigation links when active */
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .circle-wrapper {
+        padding: 20px;
+      }
+
+      .service img {
+        max-width: 150px;
+        height: 120px;
+      }
+    }
+    .services-background {
+      background-color: rgba(202, 243, 198, 0.644);
+    }
+
+    .grid-spacing {
+      row-gap: 60px;
+    }
+
+    .no-decoration {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Drone Guru Logo">
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class=>Home</a>
+        <a href="our services.html" class="active">Our Services</a>
+        <a href="about us.html">About Us</a>
+        <a href="course profile.html" class=>Course Profile</a>
+        <a href="contact us.html">Contact Us</a>
+        <a href="for hire.html">For Hire</a>
+      </div>
+    </div>
+  </header>
+  <!-- Services Section -->
+  <main class="circle-wrapper" style="background-color: rgba(202, 243, 198, 0.644);">
+    <div class="grid-container" style="row-gap: 60px;">
+      <!-- Service 1 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="enroll.html" style="text-decoration: none; color: inherit;">
+          <img src="images/repl-classes.jpg" alt="RePL Classes">
+          <div class="label">RePL Classes</div>
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="aeroc.html" style="text-decoration: none; color: inherit;">
+          <img src="images/aeroc-radio.jpg" alt="AeRoC Radio Service">
+          <div class="label">AeRoC</div>
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="inspection.html" style="text-decoration: none; color: inherit;">
+          <img src="images/inspection-monitoring.jpg" alt="Drone Inspection & Monitoring">
+          <div class="label">Inspection & Monitoring</div>
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="aerial.html" style="text-decoration: none; color: inherit;">
+          <img src="images/aerial.jpg" alt="Aerial Photography">
+          <div class="label">Aerial Photography</div>
+        </a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="lidar.html" style="text-decoration: none; color: inherit;">
+          <img src="images/lidar.jpg" alt="Lidar Mapping">
+          <div class="label">Lidar Mapping</div>
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="r&d.html" style="text-decoration: none; color: inherit;">
+          <img src="images/custom-rnd.jpg" alt="Custom and R&D">
+          <div class="label">Custom & R&D</div>
+        </a>
+      </div>
+
+      <!-- Service 7 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="thermal.html" style="text-decoration: none; color: inherit;">
+          <img src="images/thermal.jpg" alt="Thermal Inspection">
+          <div class="label">Thermal Inspection</div>
+        </a>
+      </div>
+
+      <!-- Service 8 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="logistics.html" style="text-decoration: none; color: inherit;">
+          <img src="images/logistics.jpg" alt="Drone Logistics">
+          <div class="label">Drone Logistics</div>
+        </a>
+      </div>
+
+      <!-- Service 9 -->
+      <div class="service" onclick="toggleDetails(this)">
+        <a href="search.html" style="text-decoration: none; color: inherit;">
+          <img src="images/search and rescue.png" alt="Search and Rescue">
+          <div class="label">Search and Rescue</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .service img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .service img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <style>
+    .service {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .service img {
+      transition: transform 0.3s ease;
+    }
+
+    .service .details {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .service.active img {
+      transform: translateY(-50px);
+    }
+
+    .service.active .details {
+      display: block;
+    }
+  </style>
+    
+  </style>
+
+  <script>
+    function toggleDetails(serviceElement) {
+      const isActive = serviceElement.classList.contains('active');
+      document.querySelectorAll('.service').forEach(service => service.classList.remove('active'));
+      if (!isActive) {
+        serviceElement.classList.add('active');
+      }
+    }
+  </script>
+
+  <footer>
+    &copy; <span id="year"></span> Drone Guru Pvt Ltd. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    function showModal(service, description) {
+      const modal = document.getElementById('serviceModal');
+      document.getElementById('modalTitle').textContent = service;
+      document.getElementById('modalDescription').textContent = description;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('serviceModal').style.display = 'none';
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

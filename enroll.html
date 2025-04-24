@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Guru Student Enrolment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: url('images/drone graduation.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: rgba(253, 253, 253, 0.6);
+      background-blend-mode: lighten;
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    h2.center-text, p.center-text {
+      margin: 0;
+    }
+    
+    form {
+      background-color: rgba(248, 247, 247, 0.407); /* Transparent background */
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .checkbox-group {
+      margin-top: 5px;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: inline-block;
+      margin-right: 15px;
+    }
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+    .section {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+        .submit-btn {
+          margin-top: 30px;
+          padding: 10px 20px;
+          background-color: #da0a0a;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    </style>
+    <h2>Drone Guru Student Enrolment Form</h2>
+    <p class="center-text">Welcome to Drone Guru!</p>
+    <p class="center-text">Please complete the form below to enrol in our drone training program.</p>
+<body>
+
+  <form action="https://formsubmit.co/sunshinecoastaerialphotograph@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+
+    <div class="section">
+      <h3>Personal Information</h3>
+      <label>Full Name:</label>
+      <input type="text" name="full_name" required>
+
+      <label>Date of Birth:</label>
+      <input type="date" name="dob" required>
+
+      <label>Gender:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+        <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+      </div>
+
+      <label>Email Address:</label>
+      <input type="email" name="email" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" name="phone" required>
+
+      <label>Address:</label>
+      <textarea name="address" required></textarea>
+    </div>
+
+    <!-- Emergency Contact -->
+    <div class="section">
+      <h3>Emergency Contact Information</h3>
+      <label>Emergency Contact Name:</label>
+      <input type="text" name="emergency_name" required>
+
+      <label>Relationship:</label>
+      <input type="text" name="relationship" required>
+
+      <label>Emergency Contact Phone Number:</label>
+      <input type="tel" name="emergency_phone" required>
+    </div>
+
+    <!-- Consent -->
+    <div class="section">
+      <h3>Consent and Agreement</h3>
+      <label>I agree to the terms and conditions of Drone Guru.</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="agree_terms" required> Yes</label>
+      </div>
+
+      <label>I consent to the collection and use of my personal data as per Drone Guru’s privacy policy.</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="agree_privacy" required> Yes</label>
+      </div>
+
+      <label>Signature:</label>
+      <input type="text" name="signature" required>
+
+      <label>Date:</label>
+      <input type="date" name="consent_date" required>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hire a Drone – Drone Guru Pvt Ltd</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('images/pic\ for\ from\ to\ hire\ drone.JPG') no-repeat center center fixed;
+      background-size: cover; /* Ensures the image covers the entire screen */
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    button {
+      background-color: #1e90ff;
+      color: #fff;
+      border: none;
+      padding: 14px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #006cd1;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container" style="background-color: rgba(255, 255, 255, 0.8);">
+    <h2>Hire a Drone – Drone Guru Pvt Ltd</h2>
+    <form action="https://formsubmit.co/sam.sam.shrestha@gmail.com" method="POST">
+      <!-- Disable CAPTCHA if you don’t want it -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Optional: Redirect to a Thank You page after form submission -->
+      <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+
+      <label for="fullName">Full Name *</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="droneType">Select Drone Type *</label>
+      <select id="droneType" name="droneType" required>
+        <option value="">-- Select Drone --</option>
+        <option value="DJI Inspire 2 ">DJI Inspire 2</option>
+        <option value="DJI Phantom 4 Pro v2 ">DJI Phantom 4 Pro v2</option>
+        <option value="DJI Mini 4 pro ">DJI Mini 4 pro</option>
+        <option value="DJI Mavic Air 2 ">DJI Mavic Air 2</option>
+        <option value="DJI Matric 300 ">DJI Matrice 300</option>
+        <option value="Custom Payload Drone">Custom Payload Drone</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="hireDate">Preferred Hire Date *</label>
+      <input type="date" id="hireDate" name="hireDate" required>
+
+      <label for="duration">Hire Duration *</label>
+      <select id="duration" name="duration" required>
+        <option value="">-- Select Duration --</option>
+        <option value="Full Month">Full Month</option>
+        <option value="Full Day">Full Day</option>
+        <option value="2-3 Days">2-3 Days</option>
+        <option value="1 Week">1 Week</option>
+      </select>
+
+      <label for="location">Hire Location *</label>
+      <input type="text" id="location" name="location" required>
+
+      <label for="notes">Special Instructions / Notes</label>
+      <textarea id="notes" name="notes" placeholder="Please mention any special requirements or use cases..."></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+</body>
+</html>
